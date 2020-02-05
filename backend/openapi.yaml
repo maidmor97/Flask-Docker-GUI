@@ -1,0 +1,24 @@
+openapi: 3.0.0
+info:
+  title: Communication API
+  version: '1.0'
+paths:
+  /images:
+    get:
+      summary: Returns a List of all installed Docker Images
+      operationId: controller.images
+      responses:
+        '200':
+          description: List of Docker images
+          content:
+            'application/json':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DockerImage'
+components:
+  schemas:
+    DockerImage:
+      properties:
+        name:
+          type: string
