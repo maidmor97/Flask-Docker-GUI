@@ -7,6 +7,12 @@ paths:
     get:
       summary: Returns a List of all installed Docker Images
       operationId: controller.images
+      parameters:
+        - in: query
+          name: name
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           description: List of Docker images
