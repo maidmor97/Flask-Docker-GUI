@@ -1,6 +1,10 @@
 import shell_command_runner
 def images(name=None):
     command_output = shell_command_runner.run(['docker', 'images'])
+    image_output = run_docker_images()
+    for image in image_output:
+        images.append(image)
+    return images
     lno = 1
     images = []
     for line in command_output.split('\n'):
